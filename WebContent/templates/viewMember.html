@@ -1,0 +1,35 @@
+<div class="row small-4 medium-4 large-up-4">
+	<div class"small-6 column"></div>
+	<div class"small-6 column"></div>
+</div>
+<div class="row small-4 medium-4 large-up-4">
+<div class="small-offset-2 small-8 column">
+<table>
+  <thead>
+    <tr>
+      <th width="200">First Name</th>
+      <th width="200">Last Name</th>
+      <th width="200">Emp Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr dir-paginate="event in memberdata|orderBy:sortKey:reverse|filter:search|itemsPerPage: 5">
+      <td>{{event.firstname}}</td>
+      <td>{{event.lastname}}</td>
+      <td>{{event.Employee_Id}}</td>
+    </tr>
+  </tbody>
+</table>
+<dir-pagination-controls
+                max-size="5"
+                direction-links="true"
+                boundary-links="true" >
+</dir-pagination-controls>
+</div>
+</div>
+<div class"small-4 column">
+</div>
+<div class="row small-4 medium-4 large-up-4">
+	<div class"small-6 column"></div>
+	<div class"small-6 column"></div>
+</div>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Allocations</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AddResource</display-name>
+    <servlet-name>AddResource</servlet-name>
+    <servlet-class>com.TCS.AddResource</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddResource</servlet-name>
+    <url-pattern>/AddResource</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewResource</display-name>
+    <servlet-name>ViewResource</servlet-name>
+    <servlet-class>com.TCS.ViewResource</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewResource</servlet-name>
+    <url-pattern>/ViewResource</url-pattern>
+  </servlet-mapping>
+ <servlet>
+    <description></description>
+    <display-name>AddProject</display-name>
+    <servlet-name>AddProject</servlet-name>
+    <servlet-class>com.TCS.AddProject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddProject</servlet-name>
+    <url-pattern>/AddProject</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewProject</display-name>
+    <servlet-name>ViewProject</servlet-name>
+    <servlet-class>com.TCS.ViewProject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewProject</servlet-name>
+    <url-pattern>/ViewProject</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>ViewAvail</display-name>
+    <servlet-name>ViewAvail</servlet-name>
+    <servlet-class>com.TCS.ViewAvail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAvail</servlet-name>
+    <url-pattern>/ViewAvail</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,37 @@
+<div class="row small-1 medium-1 large-up-1">
+	<div class"small-6 column"></div>
+	<div class"small-6 column"></div>
+</div>
+<div class="row small-10 medium-10 large-up-10">
+<div class"small-12 medium-12 large-12 column">
+<table>
+  <thead>
+    <tr>
+      <th width="200">Project ID</th>
+      <th width="200">Project Name</th>
+      <th width="200">Start Date</th>
+      <th width="200">End Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr dir-paginate="event in memberdata|orderBy:sortKey:reverse|filter:search|itemsPerPage: 5">
+      <td>{{event.ID}}</td>
+      <td>{{event.Name}}</td>
+      <td>{{event.strtdt}}</td>
+      <td>{{event.enddt}}</td>
+    </tr>
+  </tbody>
+</table>
+<dir-pagination-controls
+                max-size="5"
+                direction-links="true"
+                boundary-links="true" >
+</dir-pagination-controls>
+</div>
+</div>
+<div class"small-4 column">
+</div>
+<div class="row small-4 medium-4 large-up-4">
+	<div class"small-6 column"></div>
+	<div class"small-6 column"></div>
+</div>

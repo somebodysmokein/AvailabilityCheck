@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="mainApp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Dashboard | Welcome</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/accordion.css">
+    <link rel="stylesheet" href="css/menus.css">
+    <link rel="stylesheet" href="css/jsgrid.min.css">
+    <link rel="stylesheet" href="css/jsgrid-theme.min.css">
+    <link rel="stylesheet" href="css/validationerror.css">
+    <link rel="stylesheet" href="css/basicGrid.css">
+    <link rel="stylesheet" href="css/alert.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/margin.css">
+    <link rel="stylesheet" href="css/dataTables.foundation.min.css">
+    <link rel="stylesheet" href="images/foundation-icons/foundation-icons.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.	14/angular.min.js"></script>
+    <!--<script src="js/angular.js"></script>-->
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <!---<script src="js/ngRoute.js"></script>-->
+      <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+<style>
+.padded-column {
+  padding: 10px;
+}
+.size-24 { font-size: 24px; }
+</style>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1> <a href="#/home">Home</a></h1>      
+    </li>
+    
+
+
+   </ul> 
+   <section class="top-bar-section">
+      <ul class="right">
+        <!-- <i class="step fi-torsos-male-female size-24"></i> -->
+        <li class="has-form"><a href="#/viewAvailability" class="button size-24">View Availbility</a></li>
+       <!-- <li><a href='#/addMember'>Add Resource</a></li>
+    	<li><a href='#/viewMember'>View Resource</a></li>
+    	<li><a href='#/viewData'>View Project</a></li>
+    	<li><a href='#/addProject'>Add Project</a></li> -->
+       
+      </ul> 
+   </section>  
+</nav>
+
+<div class="expanded row">
+<div class="small-2 column padded-column column-block">
+<div class="card" style="width: 300px;">
+<div class="card-section">
+  <img src="images/employees.png">
+</div>  
+  <div class="card-section">
+     <center><h4><a href="#/addMember">Add Resource</a></h4></center> 
+  </div>
+</div>
+</div>
+
+<div class="small-offset-1 small-2 column padded-column column-block">
+<div class="card" style="width: 300px;">
+<div class="card-section">
+  <img src="images/addEmployees.jpg">
+</div>  
+  <div class="card-section">
+    <center><h4><a href="#/viewMember">View Resource</a></h4></center>
+  
+  </div>
+</div>
+</div>
+
+<div class="small-offset-1 small-2 column padded-column column-block">
+<div class="card" style="width: 300px;">
+<div class="card-section">
+  <img src="images/project.png">
+</div>  
+  <div class="card-section">
+    <center><h4><a href="#/viewData">View Project</a></h4></center>
+  </div>
+</div>
+</div>
+
+<div class="small-offset-1 small-2 column padded-column column-block">
+<div class="card" style="width: 300px;">
+<div class="card-section">
+  <img src="images/AddProject.png">
+</div>  
+  <div class="card-section">
+    <center> <h4><a href="#/addProject">Add Project</a></h4></center>
+  </div>
+</div>
+</div>
+
+
+
+<!-- <div class="small-offset-1 small-2 column padded-column column-block">
+<div class="card" style="width: 300px;">
+<div class="card-section">
+</div>
+</div>
+</div>
+<div class="small-offset-1 small-2 column padded-column column-block">
+<div class="card" style="width: 300px;">
+<div class="card-section">
+</div>
+</div>
+</div>
+<div class="small-offset-1 small-2 column padded-column column-block">
+<div class="card" style="width: 300px;">
+<div class="card-section">
+</div>
+</div>
+</div> -->
+</div>
+<!-- <div class="expanded row">
+<div class="small-offset-3 small-2 column padded-column column-block">
+<div class="card" style="width: 300px;">
+<div class="card-section">
+  <img src="images/availability.png">
+</div>  
+  <div class="card-section">
+    <center> <h4><a href="#/viewAvailability">View Availbility</a></h4></center>
+  </div>
+</div>
+</div>
+</div> -->
+<div class="expanded row">
+<div class="larg-12 small-12 medium-12 column">
+      <div ng-view>
+       {{message}}  
+      </div>
+</div>      
+</div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.topbar.js"></script>
+    <script src="js/foundation/foundation.slider.js"></script>
+    <script src="js/foundation/foundation.accordion.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/json_parse.js"></script>
+    <script src="js/json_parse_state.js"></script>
+    <script src="js/json2.js"></script>
+    <script src="js/cycle.js"></script>
+    <script src="controllers/mainController.js"></script>
+    <script type="text/javascript" src="js/ng-grid-2.0.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.foundation.min.js"></script>
+    <script type="text/javascript" src="js/dirPagination.js"></script>
+    <script>
+    $(document).on('ready page:load', function () {
+    $(document).foundation();
+    });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<div class="expanded row">
+	<div class="small-offset-2 small-8 medium-8 large-8 column padded-column column-block"><center><a><H4>Enter the Project Details</a></H4></center></div>
+</div>	
+<div class="expanded row">
+	<div class="small-6 medium-6 large-6 column"></div>
+	
+	<div class="small-6 medium-6 large-6 column"></div>
+</div>	
+<div class="expanded row">
+	<div class="small-6 medium-6 large-6 column"></div>
+	
+	<div class="small-6 medium-6 large-6 column"></div>
+</div>	
+<div class="expanded row">
+	<div class="small-6 medium-6 large-6 column"></div>
+	
+	<div class="small-6 medium-6 large-6 column"></div>
+</div>	
+		
+<div class="expanded row">
+	<div class="small-1 medium-2 large-2 column padded-column column-block">
+		 <label>Project Name
+          <input id="projectname" name="projectname"  type="text" placeholder="Project Fi" ng-model="params.projectname" required>
+        </label>
+	</div>
+	<div class="small-offset-1 small-1 medium-2 large-2 column padded-column column-block">
+	<label>Project Id
+          <input id="projectid" name="projectid" type="number" placeholder="12345" ng-model="params.projectid" required>
+     </label> 
+	</div>
+	<div class="small-offset-1 small-1 medium-2 large-2 column padded-column column-block">
+	<label>Start Date
+          <input id="startdt" name="startdt" type="date" ng-model="params.startdt" required>
+     </label> 
+	</div>
+	<div class="small-offset-1 small-1 medium-2 large-2 column padded-column column-block">
+	<label>End Date
+          <input id="enddt" name="enddt" type="date" ng-model="params.enddt" required>
+     </label> 
+	</div>
+	<div class="small-offset-1 small-1 medium-2 large-2 column padded-column column-block"></div>
+</div>
+<div class="expanded row">
+	<div class="small-6 medium-6 large-6 column"></div>
+	<div class="small-6 medium-6 large-6 column"></div>
+</div>
+<div class="expanded row">
+	<div class="small-6 medium-6 large-6 column"></div>
+	<div class="small-6 medium-6 large-6 column"></div>
+</div>
+<div class="expanded row">
+	<div class="small-6 medium-6 large-6 column"></div>
+	<div class="small-6 medium-6 large-6 column"></div>
+</div>
+<div class="expanded row">
+	<div class="small-6 medium-6 large-6 column"></div>
+	<div class="small-6 medium-6 large-6 column"></div>
+</div>
+<div class="expanded row">
+<div class="small-2 medium-2 large-2 column"></div>
+	<div class="small-offset-3 small-3 medium-3 large-3 column">
+          <button type="button" data-ng-click="addProject(params)" class="success button">Submit</button>
+	</div>
+	<div class="small-2 medium-2 large-2 column"></div>
+	<div class="small-3 medium-3 large-3 column">
+         <button type="button" data-ng-click="reset()" class="alert button">Reset</button>
+	</div>
+	<div class="small-offset-2 small-3 medium-3 large-3 column">
+         
+	</div>
+	
+</div>
+<div class="expanded row">
+<div class="small-offset-3 small-3 medium-2 large-2 column"></div>
+<div class="small-6 medium-6 large-6 column"></div>
+<div ng-show="result" data-alert class="alert-box" tabindex="0" aria-live="assertive" role="alertdialog">
+  {{addprojectresult.message}}
+  <button tabindex="0" class="close" aria-label="Close Alert">&times;</button>
+</div>
+</div>
+<div class="small-offset-1 small-2 medium-2 large-2 column"></div>
+</div>
