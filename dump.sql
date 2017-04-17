@@ -27,7 +27,7 @@ CREATE TABLE `allocation` (
   `Emp_key` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
   PRIMARY KEY (`alloc_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,9 +36,27 @@ CREATE TABLE `allocation` (
 
 LOCK TABLES `allocation` WRITE;
 /*!40000 ALTER TABLE `allocation` DISABLE KEYS */;
-INSERT INTO `allocation` VALUES (1,2,2),(2,3,3),(3,4,4),(4,5,11111),(5,6,11213),(6,7,11111);
+INSERT INTO `allocation` VALUES (12,13,11111),(13,14,22222),(14,15,22222),(15,16,33333);
 /*!40000 ALTER TABLE `allocation` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `avail_view`
+--
+
+DROP TABLE IF EXISTS `avail_view`;
+/*!50001 DROP VIEW IF EXISTS `avail_view`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `avail_view` (
+  `firstname` tinyint NOT NULL,
+  `lastname` tinyint NOT NULL,
+  `Emp_key` tinyint NOT NULL,
+  `id` tinyint NOT NULL,
+  `project_name` tinyint NOT NULL,
+  `project_end_dt` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `project`
@@ -52,6 +70,9 @@ CREATE TABLE `project` (
   `project_name` varchar(40) NOT NULL,
   `proj_start_dt` date NOT NULL,
   `project_end_dt` date NOT NULL,
+  `effort` varchar(20) DEFAULT NULL,
+  `funding` varchar(20) DEFAULT NULL,
+  `proj_mgr` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -62,7 +83,7 @@ CREATE TABLE `project` (
 
 LOCK TABLES `project` WRITE;
 /*!40000 ALTER TABLE `project` DISABLE KEYS */;
-INSERT INTO `project` VALUES (11111,'Hyperloop','2017-04-05','2017-04-19'),(11213,'Fi','2017-04-05','2017-04-13'),(12121,'Project Loon','2017-04-05','2017-04-27');
+INSERT INTO `project` VALUES (11111,'Fi','2017-04-06','2017-04-19','Medium','Business Funded','Lucius'),(22222,'Loon','2017-01-05','2017-02-08','Medium','Business Funded','Lucius'),(33333,'Hyperloop','2017-04-07','2017-04-28','MEdium','Business Funded','Lucius');
 /*!40000 ALTER TABLE `project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,8 +98,11 @@ CREATE TABLE `resource` (
   `firstname` varchar(40) NOT NULL,
   `lastname` varchar(40) NOT NULL,
   `Emp_key` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_ty` varchar(20) DEFAULT NULL,
+  `skill` varchar(20) DEFAULT NULL,
+  `email` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`Emp_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,9 +111,28 @@ CREATE TABLE `resource` (
 
 LOCK TABLES `resource` WRITE;
 /*!40000 ALTER TABLE `resource` DISABLE KEYS */;
-INSERT INTO `resource` VALUES ('Venkatesh','Raghunathan',2),('Ross','Geller',3),('Chandler','Bing',4),('Venky','Raghunathan',5),('Ross','Geller',6),('Venkatesh','Raghunathan',7);
+INSERT INTO `resource` VALUES ('Ross','Geller',13,'Contractoor','Angular','bruce@tcs.com'),('Ross','Geller',14,'Contractoor','Angular','bruce@tcs.com'),('Venkatesh','Raghunathan',15,'Contractoor','Angular','bruce@tcs.com'),('Ross','Geller',16,'Contractor','Angular','bruce@tcs.com');
 /*!40000 ALTER TABLE `resource` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Final view structure for view `avail_view`
+--
+
+/*!50001 DROP TABLE IF EXISTS `avail_view`*/;
+/*!50001 DROP VIEW IF EXISTS `avail_view`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = cp850 */;
+/*!50001 SET character_set_results     = cp850 */;
+/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `avail_view` AS select `r1`.`firstname` AS `firstname`,`r1`.`lastname` AS `lastname`,`r1`.`Emp_key` AS `Emp_key`,`r3`.`id` AS `id`,`r3`.`project_name` AS `project_name`,`r3`.`project_end_dt` AS `project_end_dt` from ((`resource` `r1` join `allocation` `r2`) join `project` `r3`) where ((`r3`.`project_end_dt` > (select (curdate() - interval 30 day))) and (`r3`.`id` = `r2`.`project_id`) and (`r2`.`Emp_key` = `r1`.`Emp_key`)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -100,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-16 17:40:47
+-- Dump completed on 2017-04-17  0:05:21
